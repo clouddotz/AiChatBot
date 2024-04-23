@@ -1,12 +1,12 @@
-import './App.css'
+import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import Sidebar from './Sidebar'
 
-function App() {
-  
-
+const App = () => {
   return (
-    <h1 className="text-8xl text-blue-500 font-thin underline">
-    Hello world!
-  </h1>
+    <BrowserRouter>
+      <Sidebar />
+    </BrowserRouter>
   )
 }
 
