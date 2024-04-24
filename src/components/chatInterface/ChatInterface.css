@@ -1,0 +1,190 @@
+.chatInterface{
+    flex: 1;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 15vh;
+    /* background-color: blue; */
+}
+
+.chatInterface .nav{
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    color: aquamarine;
+}
+.logo{
+    display: inline-flex;
+    align-items: center;
+    gap:10px;
+    padding: 10px 15px;
+    background-color: transparent;
+    border-radius: 50px;
+    font-size: 14px;
+    color: rgba(128, 128, 128, 0.808);
+    cursor: pointer;
+}
+
+.logo img{
+    width: 30px;
+    height: 30px;
+}
+
+.nav img{
+    width: 40px;
+    border-radius: 50%;
+}
+
+.main-container{
+    max-width: 900px;
+    margin: auto;
+}
+
+.main-container .greet{
+    margin: 50px 0;
+    font-size: 60px;
+    color: rgb(126, 178, 223);
+    font-weight: 600;
+    padding: 20px;
+}
+
+.main-container .greet span{
+    background: -webkit-linear-gradient(16deg, blue, green);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.chatInterface .cardsDiv{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 20px;
+
+}
+
+.card{
+    height: 200px;
+    padding: 15px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    position: relative;
+    cursor:pointer;
+}
+
+.card img{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    background-color: transparent;
+    border-radius: 20px;
+    bottom: 10px;
+    
+}
+
+.card p{
+    text-align: justify;
+    width: 100%;
+    color: rgb(9, 134, 243);
+    font-size: 18px;
+}
+
+.card:hover{
+    background-color: rgb(127, 179, 221);
+}
+
+.wrapper{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: auto;
+    /* background-color: blue; */
+
+}
+.inputDiv{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    max-width: 900px;
+    padding: 0px 20px;
+    margin: auto;   
+}
+
+.input{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: aliceblue;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+.inputIcon{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.inputDiv img{
+    width:25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.inputDiv input{
+    flex: 1;
+    background: transparent;
+    border:none;
+    padding: 10px;
+    font-size: 18px;
+    outline: none;
+
+}
+
+.chatDisplay{
+    padding: 0px 5%;
+    max-height: 70vh;
+    overflow: scroll;
+    /* background-color: blue; */
+}
+
+.chatDisplay::-webkit-scrollbar{
+    display: none;
+}
+
+.chatDisplay img{
+    width: 35px;
+    border-radius: 50%;
+}
+
+.user{
+    margin: 40px 0px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.bot{
+    display: flex;
+    align-items: start;
+    gap: 20px;
+    float: right;
+    max-width: 75%;
+    text-align: justify;
+}
+
+@media (max-width:600px){
+    .inputDiv input{
+        flex: none;
+        width: 150px;
+    }
+    .inputDiv img{
+        width:20px;
+    }
+    .input{
+        padding: 5px 10px;
+    }
+    .inputIcon{
+        gap: 5px;
+    }
+}
