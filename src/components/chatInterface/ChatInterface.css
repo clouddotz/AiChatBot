@@ -135,13 +135,14 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    float: right;
 }
 
 .bot {
     display: flex;
     align-items: start;
     gap: 20px;
-    float: right;
+    float: left;
     max-width: 75%;
     text-align: justify;
 }
@@ -169,6 +170,11 @@
     border-radius: 10px;
     border: 1px solid rgb(30, 30, 30);
     margin-bottom: 15px;
+}
+.black{
+    background-color: black;
+    width: 2px;
+
 }
 
 .inputIcon {
