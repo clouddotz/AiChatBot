@@ -114,25 +114,33 @@ const ChatInterface = () => {
             <div className="chatDisplay">
 
               <div className="user">
+                <div className="userText">
+                  <p>{recent}</p>
+                  <div className="black"></div>
+                </div>
                 <img src={assets.user_icon} alt="" />
-                <p>{recent}</p>
               </div>
 
               <div className="bot">
 
-                <img src={assets.sail_logo} alt="" />
+                  <div className="botText">
+                    
+                    <div className="black">
+                      {
+                        loading
+                          ?
+                          <div className='loading'>
+                            <p>loading...</p>
+                          </div>
+                          :
+                          <p dangerouslySetInnerHTML={{ __html: displayData }}></p>
 
-                {
-                  loading
-                    ?
-                    <div className='loading'>
-                      <p>loading...</p>
+                          
+                      }
                     </div>
-                    :
-                    <p dangerouslySetInnerHTML={{ __html: displayData }}></p>
+                    <img src={assets.sail_logo} alt="" />
 
-                }
-
+                </div>
               </div>
 
             </div>
