@@ -38,7 +38,7 @@ const ChatInterface = () => {
           <img src={assets.sail_logo} alt="" />
         </div>
 
-        <img src={assets.user_icon} alt="" />
+        
 
       </div>
 
@@ -49,7 +49,7 @@ const ChatInterface = () => {
             ?
             <>
               <div className="greet">
-                <p><span>SAIL..</span></p>
+                <p><span>SAIL...</span></p>
                 <p>Where dreamers are turned achievers</p>
               </div>
 
