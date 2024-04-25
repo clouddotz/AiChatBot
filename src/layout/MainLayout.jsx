@@ -1,15 +1,17 @@
-import React from 'react'
-import SideBar from '../components/sideBar/SideBar'
-import ChatInterface from '../components/chatInterface/ChatInterface'
-
+import React from 'react';
+import SideBar from '../components/sideBar/SideBar';
+import ChatInterface from '../components/chatInterface/ChatInterface';
+import "./MainLayout.css"
 const MainLayout = () => {
   return (
     <>
-    
-      <SideBar/>
-      <ChatInterface/>
-    
-      
+
+      <div id="layoutContainer">
+        <SideBar />
+        <ChatInterface />
+      </div>
+
+
     </>
   )
 }

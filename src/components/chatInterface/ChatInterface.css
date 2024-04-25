@@ -1,23 +1,22 @@
-.chatInterface{
-    flex: 1;
-    min-height: 100vh;
-    position: relative;
-    padding-bottom: 15vh;
-    /* background-color: blue; */
+.chatInterface {
+    height: 100%;
+    width: 100%;
 }
 
-.chatInterface .nav{
-    /* width: 100%; */
+/* NAVBAR SESSION */
+
+.chatInterface .nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 20px 40px 20px 20px;
     color: aquamarine;
 }
-.logo{
+
+.logo {
     display: inline-flex;
     align-items: center;
-    gap:10px;
+    gap: 10px;
     padding: 10px 15px;
     background-color: transparent;
     border-radius: 50px;
@@ -26,145 +25,101 @@
     cursor: pointer;
 }
 
-.logo img{
+.logo img {
     width: 30px;
     height: 30px;
 }
 
-.nav img{
+.nav img {
     width: 40px;
     border-radius: 50%;
 }
 
-.main-container{
-    max-width: 900px;
+/* MAIN CONTAINER SESSION */
+
+.main-container {
+    width: 70%;
     margin: auto;
+    margin-bottom: 30px;
 }
 
-.main-container .greet{
-    margin: 50px 0;
+.main-container .greet {
+    margin: 10px 0;
     font-size: 60px;
     color: rgb(126, 178, 223);
     font-weight: 600;
     padding: 20px;
 }
 
-.main-container .greet span{
+.main-container .greet span {
     background: -webkit-linear-gradient(16deg, blue, green);
-    -webkit-background-clip: text;
+    /* -webkit-background-clip: text; */
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.chatInterface .cardsDiv{
+.chatInterface .cardsDiv {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 15px;
     padding: 20px;
-
 }
 
-.card{
-    height: 200px;
+.card {
+    height: 150px;
     padding: 15px;
-    background-color: aliceblue;
+    background-color: rgb(181, 222, 242);
     border-radius: 10px;
     position: relative;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-.card img{
+.card img {
     width: 35px;
     height: 35px;
     position: absolute;
     background-color: transparent;
     border-radius: 20px;
     bottom: 10px;
-    
+
 }
 
-.card p{
+.card p {
     text-align: justify;
     width: 100%;
-    color: rgb(9, 134, 243);
+    color: black;
     font-size: 18px;
 }
 
-.card:hover{
+.card:hover {
     background-color: rgb(127, 179, 221);
 }
 
-.wrapper{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    margin: auto;
-    /* background-color: blue; */
+/* CHAT DISPLAY SESSION */
 
-}
-.inputDiv{
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    max-width: 900px;
-    padding: 0px 20px;
-    margin: auto;   
-}
-
-.input{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    background-color: aliceblue;
-    padding: 10px 20px;
-    border-radius: 50px;
-}
-
-.inputIcon{
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-.inputDiv img{
-    width:25px;
-    height: 25px;
-    cursor: pointer;
-}
-
-.inputDiv input{
-    flex: 1;
-    background: transparent;
-    border:none;
-    padding: 10px;
-    font-size: 18px;
-    outline: none;
-
-}
-
-.chatDisplay{
+.chatDisplay {
     padding: 0px 5%;
     max-height: 70vh;
     overflow: scroll;
-    /* background-color: blue; */
 }
 
-.chatDisplay::-webkit-scrollbar{
+.chatDisplay::-webkit-scrollbar {
     display: none;
 }
 
-.chatDisplay img{
+.chatDisplay img {
     width: 35px;
     border-radius: 50%;
 }
 
-.user{
+.user {
     margin: 40px 0px;
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.bot{
+.bot {
     display: flex;
     align-items: start;
     gap: 20px;
@@ -173,18 +128,73 @@
     text-align: justify;
 }
 
-@media (max-width:600px){
-    .inputDiv input{
+/* INPUT SESSION */
+
+.inputDiv {
+    position: fixed;
+    bottom: 10px;
+    width: 80%;
+    padding: 0 40px 0 200px;
+}
+
+.input {
+    position: relative;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(30, 30, 30);
+}
+
+.inputIcon {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.inputIcon img {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.inputIcon img:hover{
+    background-color: rgb(182, 179, 179);
+    border-radius: 50%;
+}
+
+.input input {
+    flex: 1;
+    background: transparent;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+}
+
+
+@media (max-width:600px) {
+    .inputDiv input {
         flex: none;
         width: 150px;
     }
-    .inputDiv img{
-        width:20px;
+
+    .inputDiv img {
+        width: 20px;
     }
-    .input{
+
+    .input {
         padding: 5px 10px;
     }
-    .inputIcon{
+
+    .inputIcon {
         gap: 5px;
     }
 }

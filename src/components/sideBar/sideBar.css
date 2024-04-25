@@ -1,5 +1,5 @@
-.sidebar{
-    min-height:100vh;
+.sidebar {
+    height: 100%;
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
@@ -7,67 +7,86 @@
     padding: 25px 15px;
 }
 
-.sidebar img{
-    width: 20px
-}
-
-.sidebar .menu{
-    display:block;
-    margin-left: 10px;
+.sidebar .menu {
+    display: block;
+    float: right;
     cursor: pointer;
+    width: 20px;
 }
 
-.sidebar .new-chat{
+.new-chat img {
+    width: 10px
+}
+
+.sidebar .new-chat {
     margin-top: 50px;
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap:10px;
-    padding: 10px 15px;
+    gap: 10px;
+    padding: 5px;
     background-color: aliceblue;
-    border-radius: 50px;
+    border-radius: 10px;
     font-size: 14px;
-    color: rgba(128, 128, 128, 0.808);
+    font-weight: bold;
+    color: black;
     cursor: pointer;
 }
 
-.sidebar .recent{
+.new-chat p {
+    text-wrap: nowrap;
+}
+
+.recent-title {
+    margin-top: 20px;
+}
+
+.sidebar .recent {
     display: flex;
     flex-direction: column;
-    animation: fadeIn 1.2s;
+    /* animation: fadeIn 1.2s; */
+    max-height: 20rem;
+    overflow-y: auto;
 }
 
-.sidebar .recent-title{
-    margin-top: 30px;
-    margin-bottom: 20px;
-}
-
-.sidebar .recent-entry{
+.sidebar .recent-entry {
     display: flex;
     align-items: start;
     gap: 10px;
-    padding: 10px;
+    padding: 10px 10px 10px 0;
     padding-right: 40px;
     border-radius: 50px;
     color: rgb(96, 106, 116);
     cursor: pointer;
 }
 
-.sidebar .recent-entry:hover{
-     
+.sidebar .recent-entry:hover {
     background-color: rgba(87, 91, 95, 0.13);
 }
 
-.sidebar .bottom{
+.sidebar .recent-entry img {
+    width: 20px;
+}
+
+.sidebar .bottomDiv {
     display: flex;
     flex-direction: column;
 }
 
-.sidebar .bottom-item{
-    padding-right: 10px;
+.sidebar .bottom-item {
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.sidebar .bottom-item img {
+    width: 20px;
 }
 
 @media (max-width:600px) {
-    .sidebar{display: none;}
-    
+    .sidebar {
+        display: none;
+    }
+
 }
