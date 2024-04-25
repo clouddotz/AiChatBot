@@ -144,7 +144,7 @@ const ChatInterface = () => {
 
         <div className="input">
 
-          <input onChange={handleInput} value={input} type="text" placeholder='Enter your question here' />
+          <input onChange={handleInput} value={input} type="text" placeholder='Type a new message here' />
 
           <div className="inputIcon">
             <img src={assets.gallery_icon} alt="" title="Attach photo" />
