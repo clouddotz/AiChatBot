@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
-import './sideBar.css';
 import { assets } from '../../assets/assets';
 import { Context } from '../Hooks/PromptContext';
+import './sideBar.css';
 
 
 const SideBar = () => {
@@ -70,20 +70,20 @@ const SideBar = () => {
 
       <div className="bottomDiv">
 
-        <div className="bottom-item">
+        {/* <div className="bottom-item">
           <img src={assets.question_icon} alt="" />
           <p>Help</p>
-        </div>
+        </div> */}
 
         <div className="bottom-item">
           <img src={assets.history_icon} alt="" />
           <p>Activity</p>
         </div>
-
+{/* 
         <div className="bottom-item">
           <img src={assets.setting_icon} alt="" />
           <p>Settings</p>
-        </div>
+        </div> */}
 
       </div>
 

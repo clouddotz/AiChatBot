@@ -1,11 +1,8 @@
 import React, { useContext } from 'react';
-import { Chatbot } from 'react-chatbot-kit';
-import ActionProvider from '../../ActionProvider';
-import MessageParser from '../../MessageParser';
 // import config from '../../config';
-import './ChatInterface.css';
 import { assets } from '../../assets/assets';
 import { Context } from '../Hooks/PromptContext';
+import './ChatInterface.css';
 
 
 const ChatInterface = () => {
@@ -31,7 +28,7 @@ const ChatInterface = () => {
       {/* <Chatbot 
         config={config}
         messageParser={MessageParser}
-         actionProvider={ActionProvider}
+        actionProvider={ActionProvider}
         /> */}
 
       <div className='nav'>
@@ -52,13 +49,13 @@ const ChatInterface = () => {
             ?
             <>
               <div className="greet">
-                <p><span>Hello, Dev..</span></p>
-                <p>How can I help you today?</p>
+                <p><span>SAIL..</span></p>
+                <p>Where dreamers are turned achievers</p>
               </div>
 
               <div className="cardsDiv">
 
-                <div className="card">
+                {/* <div className="card">
                   <p>Suggest beautiful places to see on an upcoming road trip</p>
                   <img src={assets.compass_icon} alt="" />
                 </div>
@@ -66,15 +63,47 @@ const ChatInterface = () => {
                 <div className="card">
                   <p>Suggest beautiful places to see on an upcoming road trip</p>
                   <img src={assets.bulb_icon} alt="" />
-                </div>
+                </div> */}
 
                 <div className="card">
-                  <p>Suggest beautiful places to see on an upcoming road trip</p>
+                  <dl>
+                    <dt><b>What is SAIL about?</b></dt>
+                    <dd>
+                    <b>Senator Abiru Innovative Lab</b> (SAIL), an initiative of the SAIL Foundation is a dedicated Innovation and tech lab that is providing 
+                    relevant technology, business, and digital skills to tech enthusiasts and young entrepreneurs across 
+                    the Lagos East Senatorial District.  <br /> <br />
+
+                    In driving <b>SAIL</b>, <b>Abiru</b> partnered with <b>Co-creation Hub</b> (Cc-Hub), a dedicated Innovation and tech company
+                    that makes use of social capital & technology to accelerate economic prosperity. 
+                    In order to develop training programmes that will be most impactful, in 2021, Cc-Hub, 
+                    with the Senator’s team conducted a survey using a human-centered design approach across selected 
+                    locations in the Lagos East Senatorial District. The preponderance of responses from constituents 
+                    surveyed informed the design of the 5 pilot programmes.
+
+                    </dd>
+                  </dl>
+                  
                   <img src={assets.message_icon} alt="" />
                 </div>
 
                 <div className="card">
-                  <p>Suggest beautiful places to see on an upcoming road trip</p>
+                  <dl>
+                    <dt><b>Project: AI Chatbot with Gemini Generative API (React.js)</b></dt>
+                    <dd><li>cloudDotz, a team at the SAIL tech talent program, developed an AI chatbot using React.js.
+                      This chatbot leverages the power of Google's Gemini Generative API to provide users with an
+                      interactive and informative experience.</li></dd>
+                    <dt><b>Key Features:</b></dt>
+                    <dd><li>Built with React.js for a smooth user interface.</li></dd>
+                    <dd><li>Utilizes the Gemini Generative API for intelligent and engaging conversation.</li></dd>
+                    <dd><li>Allows users to interact with the AI through text input.</li></dd>
+                    <dt><b>Project Benefits:</b></dt>
+                    <dd><li>Demonstrates expertise in building web applications with React.js.</li></dd>
+                    <dd><li>Showcases the ability to integrate cutting-edge AI technology (Gemini API).</li></dd>
+                    <dd><li>Provides a user-friendly platform for interaction with AI.</li></dd>
+                    <dd><li>This project highlights cloudDotz's proficiency in web development and their exploration of advanced AI capabilities.</li></dd>
+
+                  </dl>
+                  
                   <img src={assets.code_icon} alt="" />
                 </div>
 
