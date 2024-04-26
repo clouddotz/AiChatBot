@@ -22,13 +22,13 @@
     width: 10px
 }
 
-.sidebar .new-chat {
+.sidebar{
     margin-top: 50px;
     display: flex;
     align-items: center;
     gap: 10px;
     padding: 5px;
-    background: -webkit-linear-gradient(16deg, blue, green, rgb(255, 217, 0));
+    background: we-bkit-linear-gradient(16deg, blue, green, rgb(255, 217, 0));
     border-radius: 10px;
     font-size: 14px;
     font-weight: bold;
@@ -38,11 +38,34 @@
 
 .new-chat p {
     text-wrap: nowrap;
+    margin-top: 50px;
+    margin-left: 7px;
+    margin-right: 7px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    text-indent: 66px;
+    background-color: lightblue;
 }
 
 .recent-title {
-    margin-top: 20px;
-    font-size: 1.5rem;
+    margin-top: 50px;
+    margin-left: 7px;
+    margin-right: 7px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    text-indent: 40px;
+    background-color: lightblue;
 }
 
 .sidebar .recent {
@@ -86,7 +109,8 @@
 }
 
 .sidebar .bottom-item img {
-    width: 20px;
+    width: 29px;
+    margin-right:3px
 }
 
 @media (max-width:600px) {
