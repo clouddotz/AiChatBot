@@ -38,7 +38,7 @@ const ChatInterface = () => {
           <img src={assets.sail_logo} alt="" />
         </div>
 
-        
+        <img src={assets.user_icon} alt="" />
 
       </div>
 
@@ -49,7 +49,7 @@ const ChatInterface = () => {
             ?
             <>
               <div className="greet">
-                <p><span>SAIL...</span></p>
+                <p><span>SAIL..</span></p>
                 <p>Where dreamers are turned achievers</p>
               </div>
 
@@ -114,33 +114,25 @@ const ChatInterface = () => {
             <div className="chatDisplay">
 
               <div className="user">
-                <div className="userText">
-                  <p>{recent}</p>
-                  <div className="black"></div>
-                </div>
                 <img src={assets.user_icon} alt="" />
+                <p>{recent}</p>
               </div>
 
               <div className="bot">
 
-                  <div className="botText">
-                    
-                    <div className="black">
-                      {
-                        loading
-                          ?
-                          <div className='loading'>
-                            <p>loading...</p>
-                          </div>
-                          :
-                          <p dangerouslySetInnerHTML={{ __html: displayData }}></p>
+                <img src={assets.sail_logo} alt="" />
 
-                          
-                      }
+                {
+                  loading
+                    ?
+                    <div className='loading'>
+                      <p>loading...</p>
                     </div>
-                    <img src={assets.sail_logo} alt="" />
+                    :
+                    <p dangerouslySetInnerHTML={{ __html: displayData }}></p>
 
-                </div>
+                }
+
               </div>
 
             </div>

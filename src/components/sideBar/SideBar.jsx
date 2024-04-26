@@ -78,7 +78,6 @@ const SideBar = () => {
         <div className="bottom-item">
           <img src={assets.history_icon} alt="" />
           <p>Activity</p>
-          <img src={assets.user_icon} alt="" />
         </div>
 {/* 
         <div className="bottom-item">

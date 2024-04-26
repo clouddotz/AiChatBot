@@ -18,7 +18,7 @@ const ContextProvider=(props)=>{
     const onSend= async (Input)=>{
         setDisplayData("")
         setLoading(true)
-        // setDisplay(true)
+        setDisplay(true)
         setRecent(input)
         setPrevInputs(prev=>[...prev, input])
          const response=await runChat(input)
