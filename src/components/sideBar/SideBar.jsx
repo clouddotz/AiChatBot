@@ -37,7 +37,7 @@ const SideBar = () => {
                 <p>New Chat</p>
               </div>
 
-              <p className="recent-title">Recent</p>
+              <p className="recent-title">Recent Chats</p>
 
               <div className="recent">
 
@@ -76,6 +76,7 @@ const SideBar = () => {
         </div> */}
 
         <div className="bottom-item">
+        <img src={assets.user_icon} alt="" />
           <img src={assets.history_icon} alt="" />
           <p>Activity</p>
         </div>

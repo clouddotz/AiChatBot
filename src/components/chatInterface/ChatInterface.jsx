@@ -38,7 +38,7 @@ const ChatInterface = () => {
           <img src={assets.sail_logo} alt="" />
         </div>
 
-        <img src={assets.user_icon} alt="" />
+        
 
       </div>
 
@@ -49,7 +49,7 @@ const ChatInterface = () => {
             ?
             <>
               <div className="greet">
-                <p><span>SAIL..</span></p>
+                <p><span>SAIL...</span></p>
                 <p>Where dreamers are turned achievers</p>
               </div>
 
@@ -73,7 +73,7 @@ const ChatInterface = () => {
                     relevant technology, business, and digital skills to tech enthusiasts and young entrepreneurs across 
                     the Lagos East Senatorial District.  <br /> <br />
 
-                    In driving <b>SAIL</b>, <b>Abiru</b> partnered with <b>Co-creation Hub</b> (Cc-Hub), a dedicated Innovation and tech company
+                    In driving <b>SAIL</b>, <b>Senator Abiru</b> partnered with <b>Co-creation Hub</b> (Cc-Hub), a dedicated Innovation and tech company
                     that makes use of social capital & technology to accelerate economic prosperity. 
                     In order to develop training programmes that will be most impactful, in 2021, Cc-Hub, 
                     with the Senator’s team conducted a survey using a human-centered design approach across selected 
@@ -89,7 +89,7 @@ const ChatInterface = () => {
                 <div className="card">
                   <dl>
                     <dt><b>Project: AI Chatbot with Gemini Generative API (React.js)</b></dt>
-                    <dd><li>cloudDotz, a team at the SAIL tech talent program, developed an AI chatbot using React.js.
+                    <dd><li>cloudDotz, a team of participants at the SAIL tech talent program of Co-hort 3 Batch B, developed an AI chatbot using React.js.
                       This chatbot leverages the power of Google's Gemini Generative API to provide users with an
                       interactive and informative experience.</li></dd>
                     <dt><b>Key Features:</b></dt>
