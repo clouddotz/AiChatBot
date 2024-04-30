@@ -357,4 +357,12 @@
     .inputIcon {
         gap: 5px;
     }
+
+    .cardsDiv{
+        flex-direction: column;
+    }
+    .card, .card1{
+        width: 95%;
+        height: max-content;
+    }
 }
