@@ -1,6 +1,11 @@
 .chatInterface {
-    height: 100%;
+    max-height: 100%;
     width: 100%;
+    overflow-y: scroll;
+}
+
+.chatInterface::-webkit-scrollbar-thumb{
+    display: inline;
 }
 
 /* NAVBAR SESSION */
@@ -9,8 +14,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 40px 20px 20px;
+    /* padding:  */
     color: aquamarine;
+    position: absolute;
+    top: 0;
+    /* background-color: aqua; */
+    margin-top: 15px;
+    /* width: 100%; */
 }
 
 .logo {
@@ -44,19 +54,36 @@
 /* MAIN CONTAINER SESSION */
 
 .main-container {
-    width: 70%;
-    height: 70vh;
-    margin: auto;
-    margin-bottom: 30px;
+    width: 90%;
+    /* max-height: 80%; */
+    max-height: 70vh;
+    min-height: 70vh;
+    /* margin-bottom: 30px; */
+    /* overflow-y: scroll; */
     /* background-color: aqua; */
+    /* background-color: bisque; */
+    /* border: 2px solid red; */
+    margin: auto;
+
+    
+}
+
+.main-container::-webkit-scrollbar{
+    display: none;
 }
 
 .main-container .greet {
-    margin: 10px 0;
-    font-size: 60px;
+    /* margin: 10px 0; */
+    max-height: 25%;
+    font-size: 55px;
     color: rgb(126, 178, 223);
     font-weight: 600;
-    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* padding: 20px; */
+    /* background-color: aquamarine; */
 }
 
 .main-container .greet span {
@@ -64,47 +91,68 @@
     /* -webkit-background-clip: text; */
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 10rem;
+    font-size: 8rem;
 }
 
 .chatInterface .cardsDiv {
-    min-width: 80%;
-    height: 70%;
+    min-width: 100%;
+    min-height: 75%;
+    max-height: 75%;
+    height: 75%;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     /* grid-template-columns: repeat(auto-fill, minmax(180px, 2fr)); */
     gap: 15px;
-    padding: 20px;
+    /* padding: 20px; */
     /* background-color: red; */
+    
 }
 
-.card {
+.card, .card1 {
     width: 45%;
-    height: max-content;
-    min-height: 90%;
+    /* min-height: 95%; */
+    /* min-height: 97%;
+     */
+    height: 300px;
+    max-height: 100%;
     padding: 15px;
     background-color: rgb(181, 222, 242);
     border-radius: 10px;
     position: relative;
     cursor: pointer;
     text-align: justify;
+    overflow: hidden;
 }
 
-.card img {
+.card1{
+    /* min-height: 100%; */
+}
+
+/* 
+.cardText{
+    
+    background-color: blueviolet;
+    min-height: 100%;
+    overflow: hidden;
+
+} */
+
+/* .card img {
     width: 35px;
     height: 35px;
     position: absolute;
     background-color: transparent;
     border-radius: 20px;
     bottom: 10px;
-    /* margin-top: 30px; */
+    margin-top: 30px; 
 
-}
+} */
 
 .card p {
     text-align: justify;
     width: 100%;
+    height: 100%;
     color: black;
     font-size: 18px;
 }
@@ -116,50 +164,141 @@
 /* CHAT DISPLAY SESSION */
 
 .chatDisplay {
-    padding: 0px 5%;
-    max-height: 70vh;
-    overflow: scroll;
-}
+    
+    min-height: max-content;
 
+    /* min-height: 75vh; */
+    overflow: scroll;
+    /* background-color: aqua; */
+    /* display: flex;
+    /* flex-direction: ; */
+    /* align-items: end; */
+    /* justify-content: space-between;  */
+    
+    
+}
+.outerDisplay{
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+    
+    /* background-color: brown; */
+    overflow: hidden;
+}
 .chatDisplay::-webkit-scrollbar {
     display: none;
 }
 
+.outerDisplay::-webkit-scrollbar {
+    display: none;
+}
+
 .chatDisplay img {
-    width: 35px;
-    border-radius: 50%;
+    width: 25px;
+    border-radius: 0.2rem;
+    position: relative;
+    bottom: 0;
 }
 
 .user {
-    margin: 40px 0px;
+    /* margin: 20px 0px; */
     display: flex;
-    align-items: center;
-    gap: 20px;
+    align-items: end;
+    justify-content: end;
+    /* align-self: flex-end;
+     */
+     align-self: flex-end;
+     /* background-color: blue; */
+     position: relative;
+     right: 0;
+    gap: 5px;
+    max-width: 100%;
+    /* height: 300px; */
+    /* border: 2px red solid; */
+    margin-top: 5px;
+    
 }
+
+.userText{
+    height: max-content;
+    /* border: 2px red solid; */
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    text-wrap: balance;
+    max-width: 90%;
+}
+
+
+
+.chatDisplay .text{
+    width:max-content;
+    padding: 20px;
+    text-wrap: wrap;
+    /* background-color: blue; */
+}
+
+.user .black{
+    min-width: 4px;
+    min-height: 100%;
+    background-color: black;
+    border-radius: 0 5px 5px 0;
+}
+
+.bot .black{
+    min-width: 3px;
+    min-height: 100%;
+    background-color: black;
+    border-radius: 5px 0 0 5px;
+}
+
 
 .bot {
     display: flex;
-    align-items: start;
-    gap: 20px;
-    float: right;
-    max-width: 75%;
+    align-items: end;
+    gap: 5px;
+    max-width: 95%;
     text-align: justify;
+     }
+
+.botText{
+    height: max-content;
+    /* border: 2px red solid; */
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 90%;
 }
 
+
+
+
 /* INPUT SESSION */
+
+
 
 .inputDiv {
     position: fixed;
     bottom: 10px;
     width: 80%;
-    padding: 0 40px 0 200px;
+    /* align-self: center; */
+    padding: 0 0 0 10%;
+    /* background-color: white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
 .input {
     position: relative;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
     width: 100%;
     display: flex;
     align-items: center;
@@ -168,7 +307,9 @@
     padding: 10px 20px;
     border-radius: 10px;
     border: 1px solid rgb(30, 30, 30);
-    margin-bottom: 15px;
+    align-self: center;
+    background-color: white;
+    /* margin-bottom: 15px; */
 }
 
 .inputIcon {

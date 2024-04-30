@@ -5,26 +5,32 @@ export const Context=createContext();
 
 const ContextProvider=(props)=>{
     const [input, setInput]=useState("");
-    const [recent, setRecent]=useState("");
     const [prevInputs, setPrevInputs]=useState([]);
+    const [data, setData]= useState([{
+        userInput: "",
+        aiResponse:""
+    }])
     const [loading, setLoading]=useState(false);
     const [display, setDisplay]=useState(false);
-    const [displayData, setDisplayData]= useState("")
 
     const newChat=()=>{
         setLoading(false)
         setDisplay(false)
     }
     const onSend= async (Input)=>{
-        setDisplayData("")
+        console.log(data);
         setLoading(true)
         setDisplay(true)
-        setRecent(input)
-        setPrevInputs(prev=>[...prev, input])
-         const response=await runChat(input)
-         const check=response.toLocaleLowerCase()
+        // setPrevInputs(prev=>[...prev, input])
+         const botResponse=await runChat(input)
+        //  setResponse(botResponse)
         //  if (check.includes(ge))
-        setDisplayData(response)
+        setData(prev=>[...prev, 
+            {userInput:input,
+            aiResponse: botResponse}])
+            // for (let i=0; i<data.length; i++){
+            //     console.log(data[i].botResonse);
+            // }
         setLoading(false)
         setInput("")
     }
@@ -33,15 +39,11 @@ const ContextProvider=(props)=>{
 
     const contextValue={
         onSend,
+        data,
         input,
         setInput,
-        prevInputs,
-        setPrevInputs,
-        recent,
-        setRecent,
         display,
         setDisplay,
-        displayData,
         loading,
         newChat
 

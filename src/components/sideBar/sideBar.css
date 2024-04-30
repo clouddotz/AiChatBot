@@ -8,6 +8,10 @@
     border-radius: 10px;
     border-color: white;
     margin-left: 10px;
+    
+    max-width: 18vw;
+    background-color: black;
+    color: white;
 
 }
 
@@ -15,11 +19,14 @@
     display: block;
     float: right;
     cursor: pointer;
-    width: 20px;
+    width: 30px;
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .new-chat img {
-    width: 10px
+    width: 20px
 }
 
 .sidebar .new-chat {
@@ -28,12 +35,15 @@
     align-items: center;
     gap: 10px;
     padding: 5px;
-    background: -webkit-linear-gradient(16deg, blue, green, rgb(255, 217, 0));
-    border-radius: 10px;
+    /* background: -webkit-linear-gradient(16deg, blue, green, rgb(255, 217, 0)); */
+    color: white;
+    border-radius: 5px;
     font-size: 14px;
     font-weight: bold;
-    color: black;
+    border: 2px solid white;
     cursor: pointer;
+    width: 95%;
+    padding: 10px;
 }
 
 .new-chat p {
@@ -50,26 +60,61 @@
     flex-direction: column;
     /* animation: fadeIn 1.2s; */
     max-height: 20rem;
-    overflow-y: auto;
+    overflow-y: scroll;
+    color: white;
+    width: 95%;
 }
 
-.sidebar .recent-entry {
+.sidebar .recentData {
     display: flex;
     align-items: start;
-    gap: 10px;
-    padding: 10px 10px 10px 0;
+    flex-direction: column;
+    margin-bottom: 2px;
+    /* padding: 10px 10px 10px 0; */
     padding-right: 40px;
-    border-radius: 50px;
+    border-radius: 5px;
     color: rgb(96, 106, 116);
     cursor: pointer;
+    border: 2px solid white;
+    color: white;
+    gap: 5px;
 }
 
+.userEntry{
+    padding: 10px 5px;
+    /* border: 2px solid white; */
+    border-radius: 5px;
+    min-width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 5px;
+    height: 40px;
+    max-height: 40px;
+    overflow: hidden;
+    text-align: justify;
+    text-wrap: balance;
+}
+
+.userEntry p{
+    padding-top: 2px;
+}
+
+.botResponse{
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    /* display: none; */
+    text-wrap: wrap;
+    margin-left: 5px;
+}
 .sidebar .recent-entry:hover {
     background-color: rgba(87, 91, 95, 0.13);
 }
 
-.sidebar .recent-entry img {
-    width: 20px;
+.sidebar .recentData img {
+    width: 10px;
 }
 
 .sidebar .bottomDiv {
@@ -83,10 +128,17 @@
     align-items: center;
     gap: 5px;
     margin-bottom: 5px;
+    height: 40px;
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 5px;
+    width: 95;
+    justify-content: end;
 }
 
 .sidebar .bottom-item img {
-    width: 20px;
+    width: 30px;
+    border-radius: 5px;
 }
 
 @media (max-width:600px) {

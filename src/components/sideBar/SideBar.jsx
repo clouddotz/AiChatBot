@@ -2,17 +2,24 @@ import React, { useContext, useState } from 'react';
 import { assets } from '../../assets/assets';
 import { Context } from '../Hooks/PromptContext';
 import './sideBar.css';
+import { list } from 'postcss';
 
 
 const SideBar = () => {
-  const { onSend, prevInputs, setRecent, newChat } = useContext(Context);
+  const { onSend, setRecent, newChat, data } = useContext(Context);
 
   const [sidebarVisibility, setSidebarVisibilty] = useState(false);
+  const[botresponse, setBotResponse]=useState(false)
 
   const showPrev = async (prev) => {
     setRecent(prev);
     await onSend(prev);
   };
+
+  const showAiResponse=()=>{
+    setBotResponse(prev=>!prev)
+  }
+
 
   const handleVisibilty = () => {
     setSidebarVisibilty(prevState => !prevState);
@@ -33,7 +40,7 @@ const SideBar = () => {
             <div>
 
               <div onClick={newChat} className="new-chat">
-                <img src={assets.plus_icon} alt="" />
+                <img src={assets.add_new} alt="" />
                 <p>New Chat</p>
               </div>
 
@@ -41,15 +48,25 @@ const SideBar = () => {
 
               <div className="recent">
 
-                {
-                  prevInputs.map((input, index) => {
+                { 
+                  data.map((value, index) => 
+                   {if(value.userInput!==""||value.aiResponse!==""){
+                      
                     return (
-                      <div onClick={() => showPrev(input)} key={index} className="recent-entry">
-                        <img src={assets.message_icon} alt="" />
-                        <p>{input}...</p>
+                      <div key={index} className="recentData">
+                        <div onClick={() => showPrev(input)} className="userEntry">
+                        <img onClick={showAiResponse} src={!botresponse?assets.add_new:assets.minus_icon} alt="" />
+                        <p> {value.userInput}</p>
+                        </div>
+                        {
+                          botresponse?<div className="botResponse">
+                          <p>{value.aiResponse}...</p>
+                        </div> :null
+                        }
                       </div>
+                      
                     )
-                  })
+                  }})
                 }
 
               </div>
@@ -76,8 +93,10 @@ const SideBar = () => {
         </div> */}
 
         <div className="bottom-item">
-          <img src={assets.history_icon} alt="" />
-          <p>Activity</p>
+          {/* <img src={assets.history_icon} alt="" />
+          <p>Activity</p> */}
+          <img src={assets.user_icon} alt="" />
+
         </div>
 {/* 
         <div className="bottom-item">
