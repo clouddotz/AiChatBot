@@ -1,0 +1,25 @@
+#features-container {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#features-container-top {
+  font-size: larger;
+}
+
+#features-container-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.features-container-bottomDivs {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}

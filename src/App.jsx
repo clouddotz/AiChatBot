@@ -1,5 +1,6 @@
-
-import MainLayout from './layout/MainLayout'
+import { RouterProvider } from 'react-router-dom'
+// import MainLayout from './layout/MainLayout'
+import Router from './Router'
 
 function App() {
   
@@ -7,7 +8,8 @@ function App() {
   return (
     <>
       
-      <MainLayout/>
+      {/* <MainLayout/> */}
+      <RouterProvider router={Router}/>
 
     </>
       

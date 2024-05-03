@@ -1,0 +1,72 @@
+#heroContainer {
+  border: 1px solid black;
+  height: 100vh;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+#heroContainer nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+#sail_logo {
+  width: 40px;
+}
+
+#hero-about {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+#hero-about:hover {
+  /* background-color: #5d32c8; */
+  color: red;
+  text-decoration: none;
+}
+
+.hero-startNav {
+  background-color: #5d32c8;
+  color: whitesmoke;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.hero-startNav:hover {
+  background-color: #140a2e;
+}
+
+#hero-main {
+  /* border: 1px solid red; */
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 50%;
+  margin: auto;
+  padding: 1rem;
+}
+
+#hero-main-top-text {
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+.hero-start {
+  background-color: #5d32c8;
+  color: whitesmoke;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  width: 30%;
+  text-align: center;
+}
+
+#ai-img {
+  width: 18rem;
+}

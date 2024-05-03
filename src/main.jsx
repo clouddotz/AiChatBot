@@ -5,7 +5,9 @@ import './index.css'
 import ContextProvider from './components/Hooks/PromptContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <ContextProvider>
-    <App />
-  </ContextProvider>,
-)
+  <React.StrictMode>
+    <ContextProvider>
+      <App />
+    </ContextProvider>,
+  </React.StrictMode>
+  )
