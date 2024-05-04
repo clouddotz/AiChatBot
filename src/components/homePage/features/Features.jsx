@@ -12,7 +12,7 @@ const Features = () => {
           <div className="features-container-bottomDivs">
             <img src={assets.about} alt="icon" />
             <h3>About</h3>
-            <p>
+            <p id="features-container-firstText">
               This chatbot leverages the power of Google's Gemini Generative API
               to provide users with an interactive and informative experience.
             </p>
