@@ -18,9 +18,19 @@
     color: aquamarine;
     position: absolute;
     top: 0;
-    /* background-color: aqua; */
+    
+    
     margin-top: 15px;
     /* width: 100%; */
+}
+
+.closePrev{
+    /* margin-right: 7rem; */
+    align-self: flex-end;
+    padding: 5px;
+    border-radius: 50%;
+    font-weight: 700;
+    /* font-size: 1rem; */
 }
 
 .logo {
