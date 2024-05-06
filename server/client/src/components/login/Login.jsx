@@ -4,9 +4,12 @@ import "./Login.css";
 import SignUp from "../register/Register";
 import { useNavigate } from "react-router-dom";
 import { userLogin } from "../../helperFunctions/userControl";
+import swal from "sweetalert";
+import Alert from "../alert/Alert";
 
 const Login = () => {
   const [logged, setLogged] = useState(false);
+  const [error, setError] = useState(null);
 
   const [userDetails, setUserDetails] = useState({
     username: "",
@@ -34,10 +37,22 @@ const Login = () => {
   // Handle Login
   const loginBtn = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    const res = await userLogin(username, password);
-    console.log(`object: `, res);
-    setLoading(false);
+    try {
+      setLoading(true);
+      const res = await userLogin(username, password);
+      setLoading(false);
+      if (res) {
+        swal({
+          title: `Welcome ${res.data.username}`,
+          text: `Login successful!`,
+          icon: `success`,
+        });
+        navigate("/chat");
+      }
+    } catch (error) {
+      setLoading(false);
+      setError(error.message);
+    }
   };
 
   return (
@@ -47,7 +62,9 @@ const Login = () => {
       ) : (
         <div id="login-main">
           <div id="login-Container">
-            <h1>Welcome Back</h1>
+            <h1>Welcome Back!</h1>
+
+            {loading ? <p>Logging in...</p> : error && <Alert msg={error} />}
 
             <form action="" onSubmit={loginBtn} method="POST">
               <Input
