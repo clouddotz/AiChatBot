@@ -6,7 +6,7 @@ const Alert = ({ msg }) => {
       style={{
         backgroundColor: "red",
         color: "whitesmoke",
-        width: "100%",
+        width: "50%",
         padding: "5px",
         textAlign: "center",
         borderRadius: "5px",

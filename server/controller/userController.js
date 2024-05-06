@@ -81,3 +81,8 @@ module.exports.login = async (req, res) => {
     success: true,
   });
 };
+
+module.exports.logout = async (_, res) => {
+  res.cookie("authorized", "", { maxAge: 1 });
+  return res.json({ message: "Logout Successful", success: true });
+};

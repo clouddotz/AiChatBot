@@ -30,4 +30,17 @@ const userLogin = async (username, password) => {
   return data;
 };
 
-export { userLogin };
+const userLogout = async () => {
+  const res = await fetch("/logout", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  if (!res.ok) {
+    throw Error(res.error);
+  }
+  return res;
+};
+
+export { userLogin, userLogout };
