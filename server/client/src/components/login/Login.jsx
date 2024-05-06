@@ -17,7 +17,7 @@ const Login = () => {
 
   const { username, password } = userDetails;
   const [loading, setLoading] = useState(false);
-  const [error] = useState(null); // Define the 'error' state variable
+  const [error] = useState(null);
   const navigate = useNavigate();
 
   // Handle toggle
