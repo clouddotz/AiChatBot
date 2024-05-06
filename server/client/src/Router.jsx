@@ -4,6 +4,7 @@ import Home from "./components/homePage/main/Home";
 import ChatBot from "./components/chatBot/ChatBot";
 import About from "./components/about/About";
 import Login from "./components/login/Login";
+import ResetPassword from "./components/reset-password/ResetPassword";
 
 const Router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const Router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/resetPassword",
+        element: <ResetPassword />,
       },
       {
         path: "*",

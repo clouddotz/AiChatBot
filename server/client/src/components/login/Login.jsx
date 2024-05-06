@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import Input from "../input/Input";
 import "./Login.css";
-import SignUp from "../register/Register";
+import SignUp from "../signUp/SignUp";
 import { useNavigate } from "react-router-dom";
 import { userLogin } from "../../helperFunctions/userControl";
 import swal from "sweetalert";
 import Alert from "../alert/Alert";
+import { Link } from "react-router-dom";
+import { assets } from "../../assets/assets";
 
 const Login = () => {
   const [logged, setLogged] = useState(false);
@@ -61,12 +63,22 @@ const Login = () => {
         <SignUp />
       ) : (
         <div id="login-main">
+          <nav>
+            <div id="img-div">
+              <img id="sail_logo" src={assets.sail_logo} alt="logo" />
+            </div>
+            <h1>SAIL ChatBot</h1>
+            <Link to={"/"} id="login-nav-Link">
+              <p>Go Back Home</p>
+            </Link>
+          </nav>
+
           <div id="login-Container">
-            <h1>Welcome Back!</h1>
+            <h1 id="login-welcome">Welcome Back</h1>
 
             {loading ? <p>Logging in...</p> : error && <Alert msg={error} />}
 
-            <form action="" onSubmit={loginBtn} method="POST">
+            <form id="login-form" onSubmit={loginBtn} method="POST">
               <Input
                 type={"text"}
                 id={"Username"}
@@ -84,7 +96,9 @@ const Login = () => {
                 name={"password"}
                 onChange={handleChange}
               />
-              <button type="submit">LOGIN</button>
+              <button id="login-submitBtn" type="submit">
+                LOGIN
+              </button>
             </form>
 
             <div id="login-bottomDiv">
@@ -92,6 +106,12 @@ const Login = () => {
               <button id="login-btn" onClick={toggleLog}>
                 Register here
               </button>
+            </div>
+
+            <div>
+              <Link id="forgotPassword" to={"/resetPassword"}>
+                Forgot password?
+              </Link>
             </div>
           </div>
         </div>

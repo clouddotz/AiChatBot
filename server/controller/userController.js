@@ -3,10 +3,10 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 module.exports.signUp = async (req, res) => {
-  const { username, email, password } = req.body;
+  const { username, password } = req.body;
 
   // Check if all data are provided
-  if (!username || !email || !password) {
+  if (!username || !password) {
     return res.json({ error: "Please provide all fields" });
   }
 
@@ -18,10 +18,10 @@ module.exports.signUp = async (req, res) => {
     }
 
     // Check if email exist
-    const checkEmail = await User.exists({ email });
-    if (checkEmail !== null) {
-      return res.json({ error: "Email already exist", success: false });
-    }
+    // const checkEmail = await User.exists({ email });
+    // if (checkEmail !== null) {
+    //   return res.json({ error: "Email already exist", success: false });
+    // }
 
     // Check password length
     if (password.length < 6) {
@@ -37,7 +37,7 @@ module.exports.signUp = async (req, res) => {
     // Create the user
     const newUser = new User({
       username,
-      email,
+      // email,
       password: hashPassword,
     });
 
@@ -85,4 +85,40 @@ module.exports.login = async (req, res) => {
 module.exports.logout = async (_, res) => {
   res.cookie("authorized", "", { maxAge: 1 });
   return res.json({ message: "Logout Successful", success: true });
+};
+
+module.exports.resetPassword = async (req, res) => {
+  const { username, password } = req.body;
+
+  // Check if all data are provided
+  if (!username || !password) {
+    return res.json({ error: "Please provide all fields" });
+  }
+
+  try {
+    // Check if username exist
+    const checkUsername = await User.exists({ username });
+    if (!checkUsername) {
+      return res.json({ error: "User doesn't exist", success: false });
+    }
+
+    // Check password length
+    if (password.length < 6) {
+      return res.json({
+        error: "Password length must be more than 6",
+        success: false,
+      });
+    }
+
+    // Encrypt the password
+    const hashPassword = await bcrypt.hash(password, 10);
+
+    // Update the user
+    await User.updateOne({ username }, { password: hashPassword });
+
+    return res.json({ message: "Password changed successful", success: true });
+  } catch (error) {
+    console.log(`thisError: `, error);
+    return res.json(error.message);
+  }
 };

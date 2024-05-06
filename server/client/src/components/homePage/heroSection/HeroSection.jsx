@@ -19,9 +19,9 @@ const HeroSection = () => {
         <nav>
           <img id="sail_logo" src={assets.sail_logo} alt="logo" />
 
-          <Link to={"/about"} id="hero-about">
+          {/* <Link to={"/about"} id="hero-about">
             <p>About SAIL</p>
-          </Link>
+          </Link> */}
 
           <Link to={"/user"} className="hero-startNav" onClick={toggleLog}>
             <p>Get Started</p>
