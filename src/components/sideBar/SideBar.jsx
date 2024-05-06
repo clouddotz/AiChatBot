@@ -83,8 +83,9 @@ const SideBar = () => {
                       
                     return (
             
-                      <div onClick={()=>showPrev(index, values.userInput, values.aiResponse)} key={index} className="recentData">
-                        <div onClick={() => showAiResponse(index)} className="userEntry">
+                      <div  key={index} className="recentData">
+                        <div className="userEntry">
+                          <img onClick={()=>showPrev(index, values.userInput, values.aiResponse)} src={assets.show} alt="" />
                           <img onClick={()=>showAiResponse(index)} src={botResponseIndex!==index?assets.add_new:assets.minus_icon} alt="" />
                           <p> {values.userInput}</p>
                         </div>

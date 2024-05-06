@@ -15,9 +15,11 @@ import send_icon from './send_icon.png';
 import sail_logo from './sail_logo.jpeg';
 import cancel from './cancel_icon.png';
 import minus_icon from './minus_icon.jpg'
+import show from './show.png'
 
 export const assets = {
     history_icon,
+    show,
     drop_down,
     minus_icon,
     menu_icon,

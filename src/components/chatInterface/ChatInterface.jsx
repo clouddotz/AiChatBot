@@ -51,9 +51,7 @@ const ChatInterface = () => {
         </div>
 
         {/* <img src={assets.user_icon} alt="" /> */}
-        {
-          !prevToggle? null : <button onClick={handlePrevToggle} className='closePrev'>X</button>
-        }
+        
 
       </div>
 
@@ -132,6 +130,9 @@ const ChatInterface = () => {
               </>
               :
               <div className="outerDisplay">
+                {
+                !prevToggle? null : <button onClick={handlePrevToggle} className='closePrev'>X</button>
+                }
 
                 {data.map((values, index)=>{
                   if (values.userInput!==""||values.aiResponse!==""){

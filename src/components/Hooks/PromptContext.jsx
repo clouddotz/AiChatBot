@@ -42,10 +42,10 @@ const ContextProvider=(props)=>{
         }
         setData(prev=>[...prev, 
             {userInput:input,
-            aiResponse: bot_Response}])
+            aiResponse: botResponse}])
         setsidebarData(prev=>[...prev, 
             {userInput:input,
-            aiResponse: bot_Response}])
+            aiResponse: botResponse}])
             // for (let i=0; i<data.length; i++){
             //     console.log(data[i].botResonse);
             // }
