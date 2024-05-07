@@ -55,11 +55,11 @@
 
 .main-container {
   width: 90%;
-  /* max-height: 80%; */
+  max-height: 80%;
   /* max-height: 70vh; */
   /* min-height: 70vh; */
   /* margin-bottom: 30px; */
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
   /* background-color: aqua; */
   /* background-color: bisque; */
   /* border: 5px solid red; */
@@ -165,24 +165,26 @@
 
 .chatDisplay {
   min-height: max-content;
-
-  /* min-height: 75vh; */
   overflow: scroll;
+  /* min-height: 75vh; */
   /* background-color: aqua; */
   /* display: flex;
-    /* flex-direction: ; */
+  /* flex-direction: ; */
   /* align-items: end; */
   /* justify-content: space-between;  */
 }
 .outerDisplay {
   width: 100%;
   min-height: 70vh;
+  gap: 10px;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  /* border: 1px solid red; */
   display: flex;
   flex-direction: column-reverse;
-  gap: 10px;
-
   /* background-color: brown; */
-  overflow: hidden;
 }
 .chatDisplay::-webkit-scrollbar {
   display: none;

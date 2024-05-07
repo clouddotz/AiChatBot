@@ -79,15 +79,18 @@
 
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+dotenv.config();
+
+const URL = process.env.MongoDbURL;
 
 const connection = async () => {
   try {
-    await mongoose
-      .connect("mongodb://127.0.0.1:27017/chatBot")
-      .then(() => console.log("Db is connected"));
+    await mongoose.connect(URL).then(() => console.log("Db is connected"));
   } catch (error) {
     console.error(error);
   }
 };
 
 module.exports = connection;
+
+// "mongodb://127.0.0.1:27017/chatBot"

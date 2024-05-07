@@ -4,6 +4,8 @@ const connection = require("./model/db");
 const userRouter = require("./router/userRouter");
 const path = require("path");
 const cors = require("cors");
+const dotenv = require("dotenv");
+require("dotenv").config();
 
 // Middleware to receive json
 app.use(express.json());
@@ -19,10 +21,12 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client/dist/index.html"));
 });
 
+const PORT = process.env.PORT || 3566;
+
 const start = async () => {
   try {
     await connection();
-    app.listen(3566, () => {
+    app.listen(PORT, () => {
       console.log("Server is connected on 3566");
     });
   } catch (error) {

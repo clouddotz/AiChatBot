@@ -193,8 +193,8 @@ const ChatInterface = () => {
           />
 
           <div className="inputIcon">
-            <img src={assets.gallery_icon} alt="" title="Attach photo" />
-            <img src={assets.mic_icon} alt="" title="Record audio" />
+            {/* <img src={assets.gallery_icon} alt="" title="Attach photo" />
+            <img src={assets.mic_icon} alt="" title="Record audio" /> */}
             {input ? (
               <img
                 onClick={onSend}
