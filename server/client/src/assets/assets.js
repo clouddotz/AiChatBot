@@ -20,6 +20,7 @@ import chat from "./chat.png";
 import benefits from "./benefits.png";
 import features from "./features.png";
 import about from "./about.png";
+import show from "./show.png";
 
 export const assets = {
   history_icon,
@@ -44,4 +45,5 @@ export const assets = {
   benefits,
   features,
   about,
+  show,
 };

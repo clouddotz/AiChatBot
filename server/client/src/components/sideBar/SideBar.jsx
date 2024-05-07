@@ -7,18 +7,58 @@ import { userLogout } from "../../helperFunctions/userControl";
 import { useNavigate } from "react-router-dom";
 
 const SideBar = () => {
-  const { onSend, setRecent, newChat, data, setUser } = useContext(Context);
+  const {
+    onSend,
+    setRecent,
+    newChat,
+    data,
+    setUser,
+    setData,
+    setPrevToggle,
+    setShowPrev,
+    sidebarData,
+    prevToggle,
+  } = useContext(Context);
 
   const [sidebarVisibility, setSidebarVisibilty] = useState(false);
-  const [botresponse, setBotResponse] = useState(false);
+  const [botResponseIndex, setBotResponseIndex] = useState("");
+  const [prevIndex, setPrevIndex] = useState("");
 
-  const showPrev = async (prev) => {
-    setRecent(prev);
-    await onSend(prev);
+  const showPrev = (index, user, bot) => {
+    setPrevIndex(index);
+
+    if (prevToggle === false) {
+      setPrevToggle((prev) => !prev);
+    }
+    // setData([{
+    //   userInput:"",
+    //   aiResponse:""
+    // }])
+
+    // else(
+    //   setData([{
+    //     userInput:"",
+    //     aiResponse:""
+    //   }])
+
+    // )
+
+    if (prevIndex !== index) {
+      setData([
+        {
+          userInput: user,
+          aiResponse: bot,
+        },
+      ]);
+    }
   };
 
-  const showAiResponse = () => {
-    setBotResponse((prev) => !prev);
+  const showAiResponse = (index) => {
+    if (botResponseIndex === index) {
+      setBotResponseIndex(null);
+    } else {
+      setBotResponseIndex(index);
+    }
   };
 
   const handleVisibilty = () => {
@@ -58,28 +98,38 @@ const SideBar = () => {
             <p className="recent-title">Recent</p>
 
             <div className="recent">
-              {data.map((value, index) => {
-                if (value.userInput !== "" || value.aiResponse !== "") {
+              {sidebarData.map((values, index) => {
+                if (values.userInput !== "" || values.aiResponse !== "") {
                   return (
                     <div key={index} className="recentData">
-                      <div
-                        onClick={() => showPrev(input)}
-                        className="userEntry"
-                      >
+                      <div className="userEntry">
                         <img
-                          onClick={showAiResponse}
+                          onClick={() =>
+                            showPrev(index, values.userInput, values.aiResponse)
+                          }
+                          src={assets.show}
+                          alt=""
+                        />
+                        <img
+                          onClick={() => showAiResponse(index)}
                           src={
-                            !botresponse ? assets.add_new : assets.minus_icon
+                            botResponseIndex !== index
+                              ? assets.add_new
+                              : assets.minus_icon
                           }
                           alt=""
                         />
-                        <p> {value.userInput}</p>
+                        <p> {values.userInput}</p>
                       </div>
-                      {botresponse ? (
-                        <div className="botResponse">
-                          <p>{value.aiResponse}...</p>
-                        </div>
-                      ) : null}
+                      <div
+                        className={
+                          botResponseIndex === index
+                            ? "botResponse"
+                            : "botResponse1"
+                        }
+                      >
+                        <p>{values.aiResponse}...</p>
+                      </div>
                     </div>
                   );
                 }

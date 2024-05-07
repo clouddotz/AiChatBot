@@ -5,12 +5,29 @@ import { Context } from "../Hooks/PromptContext";
 import "./ChatInterface.css";
 
 const ChatInterface = () => {
-  const { onSend, input, setInput, display, loading, data } =
-    useContext(Context);
+  const {
+    onSend,
+    input,
+    setInput,
+    display,
+    loading,
+    data,
+    setData,
+    sidebarData,
+    setSidebarData,
+    prevToggle,
+    setPrevToggle,
+    showPrev,
+  } = useContext(Context);
 
   const handleInput = (e) => {
     const value = e.target.value;
     setInput(value);
+  };
+
+  const handlePrevToggle = () => {
+    setPrevToggle((prev) => !prev);
+    setData(sidebarData);
   };
 
   return (
@@ -32,7 +49,7 @@ const ChatInterface = () => {
           <>
             <div className="greet">
               <p>
-                <span>SAIL..</span>
+                <span>SAIL...</span>
               </p>
               <p>Where dreamers are turned achievers</p>
             </div>
@@ -145,6 +162,11 @@ const ChatInterface = () => {
           </>
         ) : (
           <div className="outerDisplay">
+            {!prevToggle ? null : (
+              <button onClick={handlePrevToggle} className="closePrev">
+                X
+              </button>
+            )}
             {data.map((values, index) => {
               if (values.userInput !== "" || values.aiResponse !== "") {
                 return (

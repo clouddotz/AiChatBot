@@ -7,8 +7,14 @@ export const Context = createContext();
 
 const ContextProvider = (props) => {
   const [input, setInput] = useState("");
-  const [prevInputs, setPrevInputs] = useState([]);
   const [data, setData] = useState([
+    {
+      userInput: "",
+      aiResponse: "",
+    },
+  ]);
+
+  const [sidebarData, setsidebarData] = useState([
     {
       userInput: "",
       aiResponse: "",
@@ -16,6 +22,8 @@ const ContextProvider = (props) => {
   ]);
   const [loading, setLoading] = useState(false);
   const [display, setDisplay] = useState(false);
+  const [showPrev, setShowPrev] = useState([{}]);
+  const [prevToggle, setPrevToggle] = useState(false);
 
   const newChat = () => {
     setLoading(false);
@@ -29,7 +37,20 @@ const ContextProvider = (props) => {
     const botResponse = await runChat(input);
     //  setResponse(botResponse)
     //  if (check.includes(ge))
+    let botResonseArray = botResponse.split("**");
+    let bot_Response;
+    for (let i = 0; i < botResonseArray.length; i++) {
+      if (i === 0 || i % 2 == 0) {
+        bot_Response += botResonseArray[i];
+      } else {
+        bot_Response += `<b>` + botResonseArray[i] + `</b>`;
+      }
+    }
     setData((prev) => [...prev, { userInput: input, aiResponse: botResponse }]);
+    setsidebarData((prev) => [
+      ...prev,
+      { userInput: input, aiResponse: botResponse },
+    ]);
     // for (let i=0; i<data.length; i++){
     //     console.log(data[i].botResonse);
     // }
@@ -67,6 +88,12 @@ const ContextProvider = (props) => {
     setDisplay,
     loading,
     newChat,
+    prevToggle,
+    setPrevToggle,
+    sidebarData,
+    showPrev,
+    setData,
+    setShowPrev,
     user,
     setUser,
   };
