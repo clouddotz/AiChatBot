@@ -72,12 +72,14 @@ module.exports.login = async (req, res) => {
   }
 
   const token = jwt.sign({ _id: checkUser._id }, process.env.SecretKey);
-  console.log(`token: `, token);
+  const nil = token.split("", 1);
+  // console.log(`nil:`, nil);
+  // console.log(`token: `, token);
   res.cookie("authorized", token);
 
   return res.json({
     message: "Welcome, login successful",
-    data: token, //checkUser
+    // data: nil, //checkUser
     success: true,
   });
 };
