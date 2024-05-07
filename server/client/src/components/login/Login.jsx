@@ -45,7 +45,7 @@ const Login = () => {
       setLoading(false);
       if (res) {
         swal({
-          title: `Welcome ${res.data.username}`,
+          title: `Welcome back`, // ${res.data.username}
           text: `Login successful!`,
           icon: `success`,
         });

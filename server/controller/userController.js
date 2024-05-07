@@ -77,7 +77,7 @@ module.exports.login = async (req, res) => {
 
   return res.json({
     message: "Welcome, login successful",
-    data: checkUser,
+    data: token, //checkUser
     success: true,
   });
 };
