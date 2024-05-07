@@ -32,7 +32,7 @@ const Features = () => {
             <h3>Benefits</h3>
             <p>• Quick and reliable responses all</p>
             <p>• Versatility and 24/7 availability </p>
-            <p>• Learning aid for</p>
+            <p>• Learning aid for all</p>
             <p>• Personalized interaction</p>
           </div>
         </div>
