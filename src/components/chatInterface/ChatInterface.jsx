@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 // import config from '../../config';
 import { assets } from '../../assets/assets';
 import { Context } from '../Hooks/PromptContext';
@@ -62,7 +62,7 @@ const ChatInterface = () => {
               ?
               <>
                 <div className="greet">
-                  <p><span>SAIL..</span></p>
+                  <p><span>SAIL...</span></p>
                   <p>Where dreamers are turned achievers</p>
                 </div>
 
