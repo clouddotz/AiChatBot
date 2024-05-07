@@ -10,20 +10,20 @@ const Footer = () => {
           <div>
             <img id="sail_logo" src={assets.sail_logo} alt="sail_logo" />
 
-            <div>facebook instagram twitter linkedIn</div>
+            {/* <div>facebook instagram twitter linkedIn</div> */}
           </div>
 
           <div>
             <h4>Meet our team</h4>
             <div id="footer-container-names">
-              <p>Name</p>
-              <p>Name</p>
-              <p>Name</p>
-              <p>Name</p>
-              <p>Name</p>
-              <p>Name</p>
-              <p>Name</p>
-              <p>Name</p>
+              <p>Lukmon Akingbade</p>
+              <p>Isaiah Okon</p>
+              <p>Toheeb Raji</p>
+              <p>Teniola Jimoh</p>
+              <p>Temitope Shodunola</p>
+              <p>Elebute Semiu</p>
+              <p>Onasanya Basit</p>
+              <p>Toheeb Ajao</p>
             </div>
           </div>
         </div>
